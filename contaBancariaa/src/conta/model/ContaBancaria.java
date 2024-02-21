@@ -7,6 +7,17 @@ public class ContaBancaria {
     private String titular;
     private float saldo;
 
+    public ContaBancaria(int numero, int agencia, int tipo, String titular, float saldo) {
+        this.numero = numero;
+        this.agencia = agencia;
+        this.tipo = tipo;
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+
+    public ContaBancaria() {}
+
+
     public int getNumero() {
         return numero;
     }
@@ -45,5 +56,14 @@ public class ContaBancaria {
 
     public void setSaldo(float saldo) {
         this.saldo = saldo;
+    }
+
+    public boolean sacar(float valor) {
+        if (this.getSaldo() < valor) {
+            System.out.println("\nSaldo insuficiente para ser sacado");
+            return false;
+        }
+        this.setSaldo(this.getSaldo() - valor);
+        return true;
     }
 }
