@@ -7,6 +7,10 @@ public class ContaPoupanca extends ContaBancaria {
         this.aniversario = aniversario;
     }
 
+    public ContaPoupanca() {
+
+    }
+
     public int getAniversario() {
         return aniversario;
     }
